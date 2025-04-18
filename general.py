@@ -1,10 +1,10 @@
-def harvest_all():
+def harvest_reset():
 	for j in range(get_world_size()):
 		for i in range(get_world_size()):
 			harvest()
 			move(East)
 		move(North)
-	go_to(0,0)
+	clear()
 
 def go_to(x,y):
 	x_diff = x - get_pos_x()

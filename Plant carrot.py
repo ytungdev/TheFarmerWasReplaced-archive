@@ -1,3 +1,5 @@
+import general
+
 def walk(x,y):
 	if x+1 == get_world_size():
 		move(North)
@@ -24,7 +26,7 @@ def main():
 	walk(x,y)
 	
 if __name__ == '__main__':
-	clear()
+	general.harvest_reset()
 	while True:
 		main()
 	
