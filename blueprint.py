@@ -22,6 +22,7 @@ def check():
 	x,y = get_pos_x(), get_pos_y()
 	return idx[map[y][x]]
 
+movement.go_to(0,0)
 while True:
 	for r in map:
 		for c in r:

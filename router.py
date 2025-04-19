@@ -13,7 +13,16 @@ route = [
 	['u','l','u','l','r','u'],
 	['u','d','l','d','l','l'],
 ]
-def next():
+dino_route = [
+	['u','l','u','l','l','l'],
+	['u','d','u','r','u','d'],
+	['u','d','u','d','u','d'],
+	['u','d','r','d','u','d'],
+	['u','d','l','l','l','d'],
+	['r','r','r','r','r','d'],
+]
+
+def next(route):
 	x,y = get_pos_x(), get_pos_y()
 	dir = route[y][x]
 	move(idx[dir])

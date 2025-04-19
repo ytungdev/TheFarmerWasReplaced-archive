@@ -34,3 +34,26 @@
     - Cost    : Carrot
     - Harvest : Wood
     - Special : Multiply if harvest max petal with 10+ sunflower
+
+## Route
+
+#### Dinosaur route
+
+- 6x6
+```
+['r','r','r','r','r','d'],
+['u','d','l','l','l','d'],
+['u','d','r','d','u','d'],
+['u','d','u','d','u','d'],
+['u','d','u','r','u','d'],
+['u','l','u','l','l','l'],
+
+dino_route = [
+	['u','l','u','l','l','l'],
+	['u','d','u','r','u','d'],
+	['u','d','u','d','u','d'],
+	['u','d','r','d','u','d'],
+	['u','d','l','l','l','d'],
+	['r','r','r','r','r','d'],
+]
+```

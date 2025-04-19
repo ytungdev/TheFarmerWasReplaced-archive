@@ -1,6 +1,9 @@
 import movement
 import general
 
+
+
+
 def plant_here():
 	if get_ground_type() != Grounds.Soil:
 		till()
@@ -10,9 +13,12 @@ def plant_in(x1,y1,x2,y2):
 	movement.walk_region(x1,y1,x2,y2,plant_here)
 
 def harvest_largest(x1,y1,x2,y2):
+	w,h = x2-x1+1, y2-y1+1
+	map = [[0 for i in range(w)] for j in range(h)]
+
 	movement.go_to(x1,y1)
-	max_petals = 0
-	loc_x,loc_y = 0,0
+	1_max_petals = 0
+	2_max_petals = 0
 	n = (x2-x1+1)*(y2-y1+1)
 	for i in range(n):
 		petals = measure()
