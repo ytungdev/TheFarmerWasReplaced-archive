@@ -7,7 +7,24 @@ direction = {
 sign = ['+','-']
 
 
-def move_in_range(x1=0,y1=0,x2=get_world_size(),y2=get_world_size()):
+def follow_path(x1=0,y1=0,x2=get_world_size()-1,y2=get_world_size()-1):
+	curr_x,curr_y = get_pos_x(),get_pos_y()
+	if curr_x > x2 or curr_x < x1:
+		go_to(x1,y1)
+	if curr_y > y2 or curr_y < y1:
+		go_to(x1,y1)
+	
+	# last col
+	if curr_x == x2:
+		# last row
+		if curr_y == y2:
+			go_to(x1,y1)
+		else:
+			go_to(x1,curr_y+1)
+	else:
+		move(direction['x']['+'])
+
+def s_path(x1=0,y1=0,x2=get_world_size()-1,y2=get_world_size()-1):
 	curr_x,curr_y = get_pos_x(),get_pos_y()
 	if curr_x > x2 or curr_x < x1:
 		go_to(x1,y1)

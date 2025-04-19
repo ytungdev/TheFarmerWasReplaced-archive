@@ -1,5 +1,4 @@
 import general
 import movement
 
-while True:
-	movement.walk_region(0,0,5,5,harvest)
+movement.follow_path(0,0,4,2)

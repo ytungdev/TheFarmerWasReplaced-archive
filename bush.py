@@ -2,29 +2,21 @@ import movement
 import general
 
 def plant_here():
-	if get_ground_type() != Grounds.Soil:
-		till()
-	plant(Entities.Pumpkin)
+	x,y = get_pos_x(), get_pos_y()
+	if (x+y)%2:
+		plant(Entities.Tree)
+	else:
+		plant(Entities.Bush)
 	
 def plant_in(x1,y1,x2,y2):
 	movement.walk_region(x1,y1,x2,y2,plant_here)
 
 def field(x1,y1,x2,y2):
 	plant_in(x1,y1,x2,y2)
-	steps = (x2-x1+1)*(y2-y1+1)
-	count = 0
-	walk = 0
-	while count < steps:
-		walk += 1
+	while True:
 		if can_harvest():
-			count += 1
-		else:
-			plant_here()
-		if walk == steps:
-			if count == steps:
-				harvest()
-			count = 0
-			walk = 0
+			harvest()
+		plant_here()
 		movement.follow_path(x1,y1,x2,y2)
 
 def fill():
