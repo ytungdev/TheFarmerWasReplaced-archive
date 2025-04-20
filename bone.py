@@ -6,17 +6,29 @@ idx = {
 }
 
 dino_route_6 = [
-	['u','l','u','l','l','l'],
-	['u','d','u','r','u','d'],
-	['u','d','u','d','u','d'],
-	['u','d','r','d','u','d'],
-	['u','d','l','l','l','d'],
 	['r','r','r','r','r','d'],
+	['u','d','l','l','l','d'],
+	['u','d','r','d','u','d'],
+	['u','d','u','d','u','d'],
+	['u','d','u','r','u','d'],
+	['u','l','u','l','l','l'],
+]
+
+dino_route_8 = [
+    ['r','r','r','r','r','r','r','d'],
+    ['u','d','l','l','l','l','l','d'],
+	['u','d','r','r','r','d','u','d'],
+	['u','d','u','d','l','d','u','d'],
+	['u','d','u','d','u','d','u','d'],
+	['u','d','u','d','u','l','u','d'],
+	['u','d','u','r','r','r','u','d'],
+	['u','l','u','l','l','l','l','l'],
 ]
 
 def next(route):
+	n = get_world_size()-1
 	x,y = get_pos_x(), get_pos_y()
-	dir = route[y][x]
+	dir = route[n-y][x]
 	return move(idx[dir])
 
 def farm(route):
@@ -28,6 +40,7 @@ def farm(route):
 	change_hat(Hats.Straw_Hat)
 
 if __name__ == '__main__':
+	clear()
 	while True:
-		farm(dino_route_6)
+		farm(dino_route_8)
 	
