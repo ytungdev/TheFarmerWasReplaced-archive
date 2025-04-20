@@ -1,6 +1,5 @@
 import general
 import movement
-import bone
+import cactus
 
-while True:
-	movement.walk_region(0,0,5,5,harvest)
+harvest()
