@@ -67,12 +67,13 @@ def farm():
 	plant_in(0,0,n,n)
 
 if __name__ == '__main__':
-	farm()
-	for i in range(get_world_size()):
-		sort_row(i)
+	while True:
+		farm()
+		for i in range(get_world_size()):
+			sort_row(i)
 
-	for i in range(get_world_size()):
-		sort_col(i)
-	harvest()
+		for i in range(get_world_size()):
+			sort_col(i)
+		harvest()
 		
 	

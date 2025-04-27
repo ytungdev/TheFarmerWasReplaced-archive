@@ -1,39 +1,67 @@
 # TheFarmerWasReplaced-archive
 
+## Functions
+- Actions
+    - clear()
+    - do_a_flip()
+    - till()
+    - harvest()
+    - move()
+    - plant()
+    - print()/quick_print()
+    - use_item()
+    - swap()
+    - change_hat()
+- Detect
+    - can_harvest() -> bool
+    - get_pos_x()/get_pos_y()
+    - get_world_size()
+    - get_entity_type()
+    - get_ground_type()
+    - get_cost()
+    - get_water()
+    - measure()
+
 
 ## Entities
-
 
 - Grass
     - Ground  : Grassland
     - Cost    : -
-    - Harvest : Hay
+    - Item    : Hay
     - Speical : -
 - Bush
     - Ground  : Grassland
     - Cost    : -
-    - Harvest : Wood
+    - Item    : Wood
+    - Special : -
+- Carrot
+    - Ground  : Soil
+    - Cost    : Wood, Hay
+    - Item    : Carrot
     - Special : -
 - Tree
     - Ground  : Grassland
     - Cost    : -
-    - Harvest : Wood
+    - Item    : Wood
     - Special : no adjacent NESW
-- Carrot
-    - Ground  : Soil
-    - Cost    : Wood, Hay
-    - Harvest : Carrot
-    - Special : -
-- Pumpkin
-    - Ground  : Soil
-    - Cost    : Carrot
-    - Harvest : Pumpkin
-    - Special : Multiply when formed n^2 square, max at n=5
 - Sunflower
     - Ground  : Soil
     - Cost    : Carrot
-    - Harvest : Wood
+    - Item    : Wood
     - Special : Multiply if harvest max petal with 10+ sunflower
+    - Topic   : sorting/merge sort
+- Pumpkin
+    - Ground  : Soil
+    - Cost    : Carrot
+    - Item    : Pumpkin
+    - Special : Multiply when formed n^2 square, max at n=5
+- Cactus
+    - Ground  : Soil
+    - Cost    : Pumpkin
+    - Item    : Cactus
+    - Special : Multiply if all adjacent cacti are sorted
+    - Topic   : bubble sort
 
 ## Sunflower
 - Given:
@@ -73,4 +101,9 @@ dino_route_8 = [
 	['u','d','u','r','r','r','u','d'],
 	['u','l','u','l','l','l','l','l'],
 ]
+```
+
+## Maze
+
+```
 ```
