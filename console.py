@@ -1,15 +1,6 @@
 import general
 import movement
-import cactus
+import testing
 
-dirs = [North, East, South, West
-opt = []
-def options()
-	for dir in dirs:
-		if move(dir):
-			opt.append(dir)
-			move(South)	
-	
 
-	quick_print(opt)
-options()
+movement.go_to(0,0)

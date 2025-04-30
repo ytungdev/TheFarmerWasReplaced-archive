@@ -21,5 +21,13 @@ def fill_with(entity):
 			plant_here(entity)
 			move(East)
 		move(North)
+
+def get_loc():
+	return get_pos_x(), get_pos_y()
+
+def back(NESW):
+	back = {North:South,East:West,
+		South:North,West:East}
+	move(back[NESW])
 			
 		

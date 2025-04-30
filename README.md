@@ -21,7 +21,11 @@
     - get_cost()
     - get_water()
     - measure()
-
+- System
+    - set_execution_speed()
+    - set_world_size()
+    - get_cost()
+    - unlock()
 
 ## Entities
 
@@ -104,6 +108,17 @@ dino_route_8 = [
 ```
 
 ## Maze
-
-```
-```
+- Logic:
+    - Use `step=0` to track state
+    - Use `split=[]` to track state of splits
+    - Use `actions=[]` to track sequnce of actions
+    - `explore()`: explore the map and find treasure
+        - find possible path at current cell as `options`
+            - ignore last cell where we come from
+        - if `len(options)` == 0: encounter dead end
+            - `go_backward()` untill reaching state of last split
+        - else: next state is possible
+            - if `len(options)` > 1: encounter split
+                - mark the current state and `split.append(step)`
+            - for each `opt` in `options`:
+                - `go_forward()` and `explore()`

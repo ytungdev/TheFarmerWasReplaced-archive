@@ -4,6 +4,7 @@ import general
 def plant_here():
 	if get_ground_type() != Grounds.Soil:
 		till()
+	use_item(Items.Fertilizer)
 	plant(Entities.Pumpkin)
 	
 def plant_in(x1,y1,x2,y2):
